@@ -42,8 +42,8 @@ export default defineConfig({
 			? sentryVitePlugin({
 					disable: MODE !== 'production',
 					authToken: process.env.SENTRY_AUTH_TOKEN,
-					org: process.env.SENTRY_ORG,
-					project: process.env.SENTRY_PROJECT,
+					org: 'frans-vilhelm',
+					project: 'kitchen-sync',
 					release: {
 						name: process.env.COMMIT_SHA,
 						setCommits: {

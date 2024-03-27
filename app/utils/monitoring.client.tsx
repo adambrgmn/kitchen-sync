@@ -20,15 +20,13 @@ export function init() {
 			return event
 		},
 		integrations: [
-			new Sentry.BrowserTracing({
-				routingInstrumentation: Sentry.remixRouterInstrumentation(
-					useEffect,
-					useLocation,
-					useMatches,
-				),
+			Sentry.browserTracingIntegration({
+				useEffect,
+				useLocation,
+				useMatches,
 			}),
 			// Replay is only available in the client
-			new Sentry.Replay(),
+			Sentry.replayIntegration(),
 			new Sentry.BrowserProfilingIntegration(),
 		],
 
